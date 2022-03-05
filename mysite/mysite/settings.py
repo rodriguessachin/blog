@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from pipes import Template
 
+import django
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,12 +29,13 @@ SECRET_KEY = 'django-insecure-09!xdapgg2%&c32j#v=lqtd-f+@xh4#2x@^x*9oujtkntjc-t%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sachin--blog.herokuapp.com']
+ALLOWED_HOSTS = ['sachin--blog.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +82,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ciba',
     }
 }
 
@@ -132,5 +135,6 @@ STATIC_ROOT=os.path.join(BASE_DIR, 'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+import django_heroku
 
-
+django_heroku.settings(locals())
