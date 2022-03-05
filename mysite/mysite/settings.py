@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from pipes import Template
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-09!xdapgg2%&c32j#v=lqtd-f+@xh4#2x@^x*9oujtkntjc-t%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','']
 
 
 # Application definition
@@ -53,11 +54,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+TEMPLATE_ROOT=os.path.join(BASE_DIR,'templat')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['G:/MCA/MCA 4TH SEM/internship 4 week/blog/blog/mysite/templat'],
+        'DIRS': [TEMPLATE_ROOT],
         'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
@@ -130,4 +132,6 @@ STATIC_ROOT=os.path.join(BASE_DIR, 'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
