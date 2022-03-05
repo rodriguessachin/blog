@@ -28,7 +28,7 @@ body, html {
 
 
 .page-heading {
-  background-image: url(../img/heading_bg.png);
+  background-image: url(/media/img/heading_bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -604,7 +604,7 @@ footer a:hover {
 
 .masonry .item {
   display: inline-block;
-  float: left;
+ 
 }
 
 .masonry .first-item {
@@ -812,7 +812,7 @@ footer a:hover {
 
 
 .more-about-us {
-  background-image: url(../img/about_us.png);
+  background-image: url(/media/img/about_us.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
